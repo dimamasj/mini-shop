@@ -1,0 +1,83 @@
+.btn {
+  border: none;
+  outline: none;
+  color: $white;
+}
+
+input, select {
+  width: 100%;
+  outline: none;
+  border: 1px solid #d7d7d7;
+  padding: 10px
+}
+
+input {
+  ::-webkit-input-placeholder {
+    color: #cccccc;
+    font-size: 300px;
+  }
+  ::-moz-placeholder {
+    color: #cccccc;
+    font-size: 300px;
+  }
+  :-moz-placeholder {
+    color: #cccccc;
+    font-size: 300px;
+  }
+  :-ms-input-placeholder {
+    color: #cccccc;
+    font-size: 300px;
+  }
+}
+
+.select-block {
+  position: relative;
+  span {
+    position: relative;
+    display: block;
+    //padding: 10px;
+    padding: 7px 10px 3px 10px;
+    background: $white;
+    border: 1px solid #d7d7d7;
+    color: #555555;
+    cursor: pointer;
+    &:after {
+      content: "";
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      margin-top: -2.5px;
+      @include triangle(down, #888888, 7px, 5px)
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 31px;
+      border-left: 1px solid #d7d7d7;
+    }
+  }
+
+}
+
+.dropdown-select {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 37px;
+  display: none;
+  background: $white;
+  border: 1px solid #d7d7d7;
+  &.active {
+    display: block;
+  }
+  li {
+    padding: 10px;
+    cursor: pointer;
+    &:hover {
+      background: #e9e9e9;
+    }
+  }
+}

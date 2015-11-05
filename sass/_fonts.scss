@@ -1,0 +1,16 @@
+$font-path: '../../fonts';
+$fonts-list: 'AleoBold', 'AleoLight', 'AleoRegular', 'slick', 'fontawesome-webfont', 'NexaBold', 'MinionProRegular';
+
+@each $item in $fonts-list {
+  @font-face {
+    font-family: $item;
+    src: url('#{$font-path}/#{$item}.eot');
+    src: url('#{$font-path}/#{$item}.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}/#{$item}.woff2') format('woff2'),
+    url('#{$font-path}/#{$item}.woff') format('woff'),
+    url('#{$font-path}/#{$item}.ttf') format('truetype'),
+    url('#{$font-path}/#{$item}.svg#MyriadPro-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}

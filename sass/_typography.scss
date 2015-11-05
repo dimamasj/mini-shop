@@ -1,0 +1,53 @@
+$base-font-size: 16px;
+$base-line-height: 24px;
+$leading: 1;
+$base-leading: $base-line-height*$leading;
+$rhythm: $base-leading;
+$rem-with-px-fallback: true;
+
+$experimental-support-for-svg: true;
+
+%base-font {
+  font-family: Oswald, sans-serif;
+}
+
+@include establish-baseline;
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  color: #434343;
+  line-height: normal;
+}
+
+h1, .h1 {
+  font-size: 48px;
+}
+
+h2, .h2 {
+  font-size: 46px;
+}
+
+h3, .h3 {
+  font-size: 44px;
+}
+
+h4, .h4 {
+  font-size: 30px;
+}
+
+h5, .h5 {
+  font-size: 24px;
+}
+
+h6, .h6 {
+  font-size: 16px;
+}
+
+body {
+  @include container;
+  @extend %base-font;
+}
+
+b {
+  font-weight: bold;
+}

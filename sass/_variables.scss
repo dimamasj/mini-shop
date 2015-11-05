@@ -1,0 +1,53 @@
+$experimental-support-for-svg: true;
+
+/*@ grid system*/
+$global-width-num : 940;
+$global-width : 940px;
+$global-width--half : $global-width/2 ;
+
+$column-count : 12;
+$column-width : $global-width / $column-count;
+
+$susy: (
+  columns: 12,  // The number of columns in your grid
+  gutters: 20/72, // The size of a gutter in relation to a single column
+  box-sizing: border-box,
+  math: fluid,
+  output: float,
+);
+
+/* grid system @*/
+
+/*@ breakpoints*/
+$desktop: 769px;
+$tablet: max-width 768px;
+$mobile: 320px;
+$mobile-tablet: 320px 768px;
+$tablet-mid: max-width 468px;
+$tablet-mid: 468px 768px;
+
+$bp-0: 320px;
+$bp-1: 468px;
+$bp-2: 768px;
+$bp-3: 960px;
+$bp-4: $global-width;
+
+$bp-0-end: $bp-1 - 1;
+$bp-1-end: $bp-2 - 1;
+$bp-2-end: $bp-3 - 1;
+$bp-3-end: $bp-4 - 1;
+
+$bp-0-0: 0 $bp-0; // 320 - 468
+$bp-0-1: $bp-0 $bp-0-end; // 320 - 467
+$bp-1-2: $bp-1 $bp-1-end; // 468 - 767
+$bp-2-3: $bp-2 $bp-2-end; // 768 - 959
+$bp-3-4: $bp-3 $bp-3-end; // 960 - 1199
+
+/*breakpoints @*/
+
+/*@ colors*/
+
+$white : #fff;
+$black : #000;
+
+/* colors @*/

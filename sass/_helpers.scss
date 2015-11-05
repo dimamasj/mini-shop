@@ -1,0 +1,56 @@
+$sprite: sprite-map("sprite/*.png", $spacing: 5px);
+//$copiest: sprite-map("copiest/*.png");
+//* example :
+// @include sprite($sprite, arrow);
+//
+// define a sprite map
+$box-padding: 5px;
+
+@mixin sprite($map, $sprite, $vertical-align: false, $horizontal-align: false, $repeat: no-repeat, $height: true, $width: true) {
+  $box-padding: 5px;
+  $icon-spacing: 20px;
+  $sprite-image: sprite-file($map, $sprite);
+  $sprite-map: sprite-url($map);
+  $sprite-position: sprite-position($map, $sprite, 0, 0);
+
+  background: $sprite-map $sprite-position $repeat;
+  @if $height == true {
+    $sprite-height: image-height($sprite-image);
+    $sprite-height-half: -$sprite-height/2;
+    height: $sprite-height;
+    @if $vertical-align == true {
+      margin-top: $sprite-height-half;
+    }
+  }
+
+  @if $width == true {
+    $sprite-width: image-width($sprite-image);
+    width: $sprite-width;
+    $sprite-width-half: -$sprite-width/2;
+    @if $horizontal-align == true {
+      margin-left: $sprite-width-half;
+    }
+  }
+}
+
+@mixin triangle($direction, $color, $sizeW, $sizeH) {
+  $halfSizeW: $sizeW / 2;
+  $halfSizeH: $sizeW / 2;
+  @if $direction == "left" {
+    border-width: $halfSizeH $sizeW $halfSizeH 0;
+    border-color: transparent $color transparent transparent;
+  } @else if $direction == "right" {
+    border-width: $halfSizeH 0 $halfSizeH $sizeW;
+    border-color: transparent transparent transparent $color;
+  } @else if $direction == "up" {
+    border-width: 0 $halfSizeW $sizeH $halfSizeW;
+    border-color: transparent transparent $color transparent;
+  } @else if $direction == "down" {
+    border-style: solid;
+    border-width: $sizeH $halfSizeW 0 $halfSizeW;
+    border-color: $color transparent transparent transparent;
+  }
+  width: 0;
+  height: 0;
+  border-style: solid;
+}

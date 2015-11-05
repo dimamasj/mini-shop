@@ -1,0 +1,48 @@
+.popup {
+  padding: 2px;
+  background: #333333;
+  z-index: 10;
+  .popup-title {
+    color: $white;
+  }
+  .popup-content {
+    padding: 10px 11px;
+    background: #f6f6f6;
+    h6 {
+      margin-bottom: 8px;
+      text-align: left;
+    }
+  }
+}
+
+.popup-currency {
+  display: none;
+  width: 215px;
+  position: absolute;
+  top: 34px;
+  right: -16px;
+  z-index: 10000;
+  @include breakpoint(max-width $bp-3) {
+    top: 27px;
+    left: -31px;
+  }
+  &.active {
+    display: block;
+  }
+  .popup-title {
+    padding-left: 10px;
+    line-height: 36px;
+    img {
+      margin-right: 12px;
+    }
+  }
+}
+
+.country-list {
+  .country-list-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #d7d7d7;
+    font-family: OswaldLight, sans-serif;
+  }
+}
+
